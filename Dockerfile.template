@@ -1,4 +1,4 @@
-FROM quay.io/baselibrary/java:8
+FROM baselibrary/java:8
 MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
