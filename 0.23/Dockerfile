@@ -3,7 +3,7 @@ MAINTAINER ShawnMa <qsma@thoughtworks.com>
 
 ## Version
 ENV MESOS_MAJOR   0.23
-ENV MESOS_VERSION %%MESOS_VERSION%%
+ENV MESOS_RELEASE 0.23.1-0.2.61.ubuntu1404
 
 ## Repository
 RUN \
@@ -13,7 +13,7 @@ RUN \
 ## Packages
 RUN \
   apt-get update &&\
-  apt-get install -y mesos=$MESOS_VERSION iptables libapparmor1 &&\
+  apt-get install -y mesos=$MESOS_RELEASE iptables libapparmor1 &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Scripts
