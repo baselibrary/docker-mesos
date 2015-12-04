@@ -13,18 +13,14 @@ RUN \
 ## Packages
 RUN \
   apt-get update &&\
-  apt-get install -y mesos=$MESOS_VERSION &&\
+  apt-get install -y mesos=$MESOS_VERSION iptables &&\
   rm -rf /var/lib/apt/lists/*
 
 ## Scripts
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod a+x            /docker-entrypoint.sh
 
-EXPOSE 5050
-
 VOLUME ["/var/lib/mesos"]
-
-ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
 
 CMD ["mesos"]
 
