@@ -16,10 +16,6 @@ RUN \
   apt-get install -y mesos=$MESOS_RELEASE iptables libapparmor1 &&\
   rm -rf /var/lib/apt/lists/*
 
-## Scripts
-ADD docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod a+x            /docker-entrypoint.sh
-
 VOLUME ["/var/lib/mesos"]
 
 CMD ["mesos"]
